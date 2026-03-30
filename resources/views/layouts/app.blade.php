@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+    <title>@yield('title', 'Phasmophobia Wiki')</title>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- HEADER -->
+        <header>
+            <h1>Phasmophobia Wiki</h1>
+            <p class="subtitle">Guia definitiva para el cazador de fantasmas</p>
+
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMain">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('inicio') ? 'active' : '' }}" href="{{ route('inicio') }}">
+                                    <i class="bi bi-house-door"></i> Inicio
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('curiosidades') ? 'active' : '' }}" href="{{ route('curiosidades') }}">
+                                    <i class="bi bi-lightbulb"></i> Curiosidades
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('guia') ? 'active' : '' }}" href="{{ route('guia') }}">
+                                    <i class="bi bi-book"></i> Guía
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://store.steampowered.com/app/739630/Phasmophobia/" target="_blank">
+                                    <i class="bi bi-steam"></i> Steam
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- LAYOUT PRINCIPAL: CONTENT + SIDEBAR -->
+        <div class="main-layout">
+            <main class="content">
+                @yield('content')
+            </main>
+
+            <aside class="sidebar">
+                @yield('sidebar')
+
+                @section('default-sidebar')
+                <h3><i class="bi bi-link-45deg"></i> Enlaces de interés</h3>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://phasmophobia.fandom.com/" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-wikipedia"></i> Wiki oficial
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-discord"></i> Discord
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-youtube"></i> YouTube
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-reddit"></i> Reddit
+                        </a>
+                    </li>
+                </ul>
+
+                <h3><i class="bi bi-wrench"></i> Herramientas</h3>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-calculator"></i> Calculadora de Evidencias
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-map"></i> Mapas
+                        </a>
+                    </li>
+                </ul>
+                @show
+            </aside>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container text-center">
+                <p>&copy; {{ date('Y') }} Phasmophobia Guia - Proyecto Educativo</p>
+                <p>
+                    Phasmophobia es propiedad de
+                    <a href="https://kineticgames.co.uk/" target="_blank">Kinetic Games.</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
