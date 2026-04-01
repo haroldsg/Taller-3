@@ -16,8 +16,13 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #d4d4d8;
-    background-color: #0a0a0f;
     min-height: 100vh;
+    background-color: #0a0a0f;
+    background-image: url('../images/background/bg-dark.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Overlay oscuro sobre la imagen de fondo para legibilidad */
@@ -43,15 +48,31 @@ body::before {
    b.- HEADER / CABECERA
    ============================================== */
 header {
-    background: linear-gradient(135deg, rgba(20, 83, 45, 0.3), rgba(10, 10, 15, 0.95));
+    background-image: url('../images/background/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-bottom: 3px solid #22c55e;
     position: relative;
     padding: 0;
     margin-bottom: 20px;
 }
 
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 15, 0.75);
+    z-index: 1;
+}
+
 /* b.- Titulo principal: tipo fuente, tamano y estilo */
 header h1 {
+    position: relative;
+    z-index: 2;
     font-family: 'Georgia', 'Times New Roman', serif;
     font-size: 2.8rem;
     font-style: italic;
@@ -61,21 +82,29 @@ header h1 {
     padding: 40px 20px 10px;
     text-shadow: 0 0 20px rgba(34, 197, 94, 0.5), 0 0 40px rgba(34, 197, 94, 0.2);
     letter-spacing: 2px;
-    margin: 0;
 }
 
 header .subtitle {
+    position: relative;
+    z-index: 2;
     text-align: center;
     color: #a1a1aa;
     font-size: 1.1rem;
     padding: 0 20px 15px;
     font-style: italic;
-    margin: 0;
 }
 
 /* ==============================================
    NAVBAR - Estilos personalizados sobre Bootstrap
    ============================================== */
+
+nav {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(24, 24, 30, 0.95);
+    border-top: 1px solid #27272a;
+}
+
 header .navbar {
     background-color: rgba(24, 24, 30, 0.95) !important;
     border-top: 1px solid #27272a;
@@ -93,6 +122,12 @@ header .navbar .nav-link:hover {
     background-color: rgba(34, 197, 94, 0.15);
     color: #22c55e !important;
 }
+
+header .navbar .nav-link:visited {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #a855f7 !important;
+}
+
 
 header .navbar .nav-link.active {
     color: #22c55e !important;
@@ -233,6 +268,8 @@ h4 {
    ============================================== */
 p {
     margin: 15px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
     font-size: 1rem;
     text-align: justify;
     line-height: 1.7;
@@ -340,6 +377,32 @@ p {
     margin-top: 0;
 }
 
+.tarjeta-fantasma {
+    flex: 1 1 280px;
+    background-color: rgba(10, 10, 15, 0.7) !important;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+    padding: 20px;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.tarjeta-fantasma:hover {
+    border-color: #22c55e;
+    transform: translateY(-2px);
+}
+
+.tarjeta-fantasma h4 {
+    color: #22c55e;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.tarjeta-fantasma p {
+    font-size: 0.95rem;
+    color: #a1a1aa;
+    margin: 0;
+}
+
 /* Seccion lista */
 .seccion-lista {
     background-color: rgba(120, 53, 15, 0.15);
@@ -355,6 +418,10 @@ p {
     font-size: 1.4rem;
     margin-bottom: 15px;
     margin-top: 0;
+}
+
+.seccion-lista .badge.bg-warning {
+    margin: auto 1rem auto 0;
 }
 
 /* Seccion spotlight */
