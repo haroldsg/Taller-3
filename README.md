@@ -1,59 +1,155 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Phasmophobia Wiki - Sistema de Gestion de Contactos
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### Taller 3: Implementacion de Arquitectura MVC y Frameworks
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Descripcion del Proyecto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Sistema de gestion de contactos desarrollado con el patron de diseno **Modelo-Vista-Controlador (MVC)** utilizando **Laravel 12** como framework backend. El proyecto integra el diseno responsivo del Taller 1 (Phasmophobia Wiki) con el formulario de contactos del Taller 2, implementando persistencia en base de datos MySQL.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Requisitos Previos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- **PHP** >= 8.2
+- **Composer** (Gestor de dependencias de PHP)
+- **MySQL** >= 5.7 o **MariaDB** >= 10.3
+- **XAMPP**, **Laragon** o servidor web similar
+- **Node.js** (opcional, para compilar assets)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Instalacion
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1. Clonar el repositorio
 
-### Premium Partners
+```bash
+git clone https://github.com/tu-usuario/taller_3.git
+cd taller_3
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 2. Instalar dependencias de PHP
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Configurar el archivo de entorno
 
-## Code of Conduct
+Copiar el archivo de ejemplo y configurarlo:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+cp .env.example .env
+```
 
-## Security Vulnerabilities
+Editar el archivo `.env` con los datos de tu base de datos:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=taller_3
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## License
+### 4. Generar la clave de la aplicacion
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan key:generate
+```
+
+### 5. Crear la base de datos
+
+Crear una base de datos llamada `taller_3` en MySQL:
+
+```sql
+CREATE DATABASE taller_3;
+```
+
+### 6. Ejecutar las migraciones
+
+```bash
+php artisan migrate
+```
+
+### 7. Poblar la base de datos con datos iniciales (20 contactos)
+
+```bash
+php artisan db:seed --class=ContactoSeeder
+```
+
+### 8. Iniciar el servidor de desarrollo
+
+```bash
+php artisan serve
+```
+
+## Estructura de la Base de Datos
+
+### Tabla: `contactos`
+
+| Campo         | Tipo                | Restricciones                              |
+|---------------|---------------------|-------------------------------------------|
+| id            | BIGINT UNSIGNED     | PRIMARY KEY, AUTO_INCREMENT               |
+| cedula        | VARCHAR(255)        | UNIQUE, NOT NULL                          |
+| nombre        | VARCHAR(255)        | NOT NULL                                  |
+| apellido      | VARCHAR(255)        | NOT NULL                                  |
+| edad          | TINYINT UNSIGNED    | NOT NULL (16-89)                          |
+| genero        | ENUM                | 'masculino', 'femenino', 'otro'           |
+| telefono      | VARCHAR(12)         | NOT NULL (formato: XXXX-XXXXXXX)          |
+| telefono2     | VARCHAR(12)         | NULLABLE                                  |
+| email         | VARCHAR(255)        | NOT NULL                                  |
+| email2        | VARCHAR(255)        | NULLABLE                                  |
+| estado_civil  | ENUM                | 'soltero', 'casado', 'divorciado', 'concubinato', 'viudo' |
+| direccion     | VARCHAR(255)        | NOT NULL                                  |
+| departamento  | VARCHAR(255)        | NOT NULL                                  |
+| cargo         | VARCHAR(255)        | NOT NULL                                  |
+| created_at    | TIMESTAMP           | AUTO                                      |
+| updated_at    | TIMESTAMP           | AUTO                                      |
+
+### Tabla: `users`
+
+| Campo              | Tipo            | Restricciones                    |
+|--------------------|-----------------|----------------------------------|
+| id                 | BIGINT UNSIGNED | PRIMARY KEY, AUTO_INCREMENT      |
+| name               | VARCHAR(255)    | NOT NULL                         |
+| email              | VARCHAR(255)    | UNIQUE, NOT NULL                 |
+| password           | VARCHAR(255)    | NOT NULL                         |
+| security_question  | VARCHAR(255)    | NOT NULL                         |
+| security_answer    | VARCHAR(255)    | NOT NULL                         |
+| created_at         | TIMESTAMP       | AUTO                             |
+| updated_at         | TIMESTAMP       | AUTO                             |
+
+---
+
+## Rutas Principales
+
+| Metodo | Ruta                    | Accion                      |
+|--------|-------------------------|-----------------------------|
+| GET    | /login                  | Formulario de login         |
+| POST   | /login                  | Procesar login              |
+| GET    | /register               | Formulario de registro      |
+| POST   | /register               | Procesar registro           |
+| POST   | /logout                 | Cerrar sesion               |
+| GET    | /forgot-password        | Recuperar contrasena        |
+| GET    | /                       | Pagina de inicio            |
+| GET    | /guia                   | Pagina de guia              |
+| GET    | /curiosidades           | Pagina de curiosidades      |
+| GET    | /contactos              | Lista de contactos          |
+| GET    | /contactos/create       | Formulario nuevo contacto   |
+| POST   | /contactos              | Guardar nuevo contacto      |
+| GET    | /contactos/{id}/edit    | Formulario editar contacto  |
+| PUT    | /contactos/{id}         | Actualizar contacto         |
+| DELETE | /contactos/{id}         | Eliminar contacto           |
+
+---
+
+## Tecnologias Utilizadas
+
+- **Backend**: Laravel 12 (PHP 8.2)
+- **Frontend**: Blade Templates, Bootstrap 5.3, Bootstrap Icons
+- **Base de Datos**: MySQL
+- **Validacion**: W3C HTML5 y CSS3
+

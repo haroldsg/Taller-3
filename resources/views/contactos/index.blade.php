@@ -75,8 +75,10 @@
         </table>
     </div>
 
-    {{-- Paginación (cuando conectes la BD) --}}
-    {{-- {{ $contactos->links() }} --}}
+    {{-- Paginación --}}
+    <div class="d-flex justify-content-center">
+        {{ $contactos->links() }}
+    </div>
 @endsection
 
 @section('sidebar')

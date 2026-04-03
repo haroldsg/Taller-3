@@ -12,7 +12,7 @@ class ContactoController extends Controller
      */
     public function index()
     {
-        $contactos = Contacto::all();
+        $contactos = Contacto::paginate(10);
         return view('contactos.index', compact('contactos'));
     }
 

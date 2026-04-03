@@ -12,7 +12,7 @@
 
     <hr class="section-divider">
 
-    <!-- Artículo con clases Bootstrap -->
+    <!-- Artículo -->
     <article class="card bg-dark border-secondary mb-4">
         <div class="card-header bg-transparent border-secondary">
             <h3 class="card-title text-success mb-1">
@@ -88,7 +88,7 @@
         </div>
     </article>
 
-    <!-- Alertas con Bootstrap -->
+    <!-- Alertas -->
     <div class="alert alert-success d-flex align-items-center" role="alert">
         <i class="bi bi-info-circle-fill me-2"></i>
         <div>

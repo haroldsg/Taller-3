@@ -12,7 +12,7 @@
 
     <hr class="section-divider">
 
-    <!-- Sección Tarjetas con Bootstrap Cards -->
+    <!-- Sección Tarjetas -->
     <div class="seccion-tarjetas">
         <h3><i class="bi bi-ghost"></i> Datos sobre los fantasmas</h3>
         <p>Cada fantasma tiene una personalidad propia, aquí podrás ver algunos datos curiosos sobre ellos.</p>
@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    <!-- Sección Lista con Bootstrap -->
+    <!-- Sección Lista -->
     <div class="seccion-lista mt-4">
         <h3><i class="bi bi-controller"></i> 10 Datos que no conocías del juego</h3>
         <p>Más allá de los fantasmas, el propio juego esconde secretos y mecánicas que muchos jugadores desconocen.</p>
@@ -145,7 +145,7 @@
         </div>
     </div>
 
-    <!-- Sección Spotlight con Bootstrap -->
+    <!-- Sección Spotlight -->
     <div class="seccion-spotlight mt-4">
         <h3><i class="bi bi-star-fill"></i> Curiosidades del Desarrollo</h3>
 

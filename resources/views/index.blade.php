@@ -10,7 +10,7 @@
 
     <hr class="section-divider">
 
-    <!-- Tabla con Bootstrap -->
+    <!-- Tabla -->
     <div class="table-responsive">
         <table class="table table-dark table-striped table-hover">
             <caption>Tabla de Evidencias por Fantasma</caption>
@@ -86,7 +86,7 @@
     <h3>Distribución de evidencias</h3>
     <p>El siguiente grafico muestra la distribucion de cada tipo de evidencia entre los 24 fantasmas del juego. Algunas evidencias como EMF Nivel 5 y Huellas Dactilares aparecen con mayor frecuencia.</p>
 
-    <!-- Barras de progreso con Bootstrap -->
+    <!-- Barras de progreso -->
     <div class="chart-wrapper">
         <div class="mb-3">
             <label class="form-label">EMF 5</label>
