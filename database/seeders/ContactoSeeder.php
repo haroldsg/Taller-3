@@ -1,0 +1,323 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use App\Models\Contacto;
+
+class ContactoSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $contactos = [
+            [
+                'cedula' => '28330946',
+                'nombre' => 'Juan',
+                'apellido' => 'Pérez',
+                'edad' => 28,
+                'genero' => 'masculino',
+                'telefono' => '0412-1234567',
+                'telefono2' => null,
+                'email' => 'juan.perez@email.com',
+                'email2' => null,
+                'estado_civil' => 'soltero',
+                'direccion' => 'Av. Bolívar 123, Valencia',
+                'departamento' => 'Recursos Humanos',
+                'cargo' => 'Analista'
+            ],
+            [
+                'cedula' => '25789456',
+                'nombre' => 'María',
+                'apellido' => 'González',
+                'edad' => 35,
+                'genero' => 'femenino',
+                'telefono' => '0414-9876543',
+                'telefono2' => '0241-8523697',
+                'email' => 'maria.gonzalez@empresa.com',
+                'email2' => 'mgonzalez@gmail.com',
+                'estado_civil' => 'casado',
+                'direccion' => 'Calle Principal 456, Naguanagua',
+                'departamento' => 'Contabilidad',
+                'cargo' => 'Contador Senior'
+            ],
+            [
+                'cedula' => '30125478',
+                'nombre' => 'Carlos',
+                'apellido' => 'Rodríguez',
+                'edad' => 22,
+                'genero' => 'masculino',
+                'telefono' => '0424-5551234',
+                'telefono2' => null,
+                'email' => 'carlos.r@correo.com',
+                'email2' => null,
+                'estado_civil' => 'soltero',
+                'direccion' => 'Urb. Las Acacias, Casa 12',
+                'departamento' => 'Sistemas',
+                'cargo' => 'Desarrollador Junior'
+            ],
+            [
+                'cedula' => '18956234',
+                'nombre' => 'Ana',
+                'apellido' => 'Martínez',
+                'edad' => 45,
+                'genero' => 'femenino',
+                'telefono' => '0416-3334455',
+                'telefono2' => '0412-7778899',
+                'email' => 'ana.martinez@empresa.com',
+                'email2' => null,
+                'estado_civil' => 'divorciado',
+                'direccion' => 'Av. Universidad, Edif. Torre A',
+                'departamento' => 'Gerencia',
+                'cargo' => 'Gerente de Proyectos'
+            ],
+            [
+                'cedula' => '22458963',
+                'nombre' => 'Pedro',
+                'apellido' => 'López',
+                'edad' => 38,
+                'genero' => 'masculino',
+                'telefono' => '0426-1112233',
+                'telefono2' => null,
+                'email' => 'pedro.lopez@mail.com',
+                'email2' => 'plopez.trabajo@empresa.com',
+                'estado_civil' => 'casado',
+                'direccion' => 'Sector La Viña, Calle 5',
+                'departamento' => 'Ventas',
+                'cargo' => 'Ejecutivo de Ventas'
+            ],
+            [
+                'cedula' => '27445123',
+                'nombre' => 'Laura',
+                'apellido' => 'Fernández',
+                'edad' => 31,
+                'genero' => 'femenino',
+                'telefono' => '0414-2223344',
+                'telefono2' => null,
+                'email' => 'laura.fernandez@correo.com',
+                'email2' => null,
+                'estado_civil' => 'soltero',
+                'direccion' => 'Urbanización El Parral, Casa 45',
+                'departamento' => 'Marketing',
+                'cargo' => 'Coordinadora de Marketing'
+            ],
+            [
+                'cedula' => '19876543',
+                'nombre' => 'Roberto',
+                'apellido' => 'Sánchez',
+                'edad' => 52,
+                'genero' => 'masculino',
+                'telefono' => '0424-8889999',
+                'telefono2' => '0241-5554444',
+                'email' => 'roberto.sanchez@empresa.com',
+                'email2' => 'rsanchez@hotmail.com',
+                'estado_civil' => 'casado',
+                'direccion' => 'Av. Libertador 789, Valencia',
+                'departamento' => 'Gerencia',
+                'cargo' => 'Director General'
+            ],
+            [
+                'cedula' => '26332145',
+                'nombre' => 'Sofia',
+                'apellido' => 'Ramírez',
+                'edad' => 26,
+                'genero' => 'femenino',
+                'telefono' => '0412-6667788',
+                'telefono2' => null,
+                'email' => 'sofia.ramirez@mail.com',
+                'email2' => null,
+                'estado_civil' => 'soltero',
+                'direccion' => 'Residencias Los Pinos, Apto 3B',
+                'departamento' => 'Diseño',
+                'cargo' => 'Diseñadora Gráfica'
+            ],
+            [
+                'cedula' => '21789654',
+                'nombre' => 'Miguel',
+                'apellido' => 'Torres',
+                'edad' => 41,
+                'genero' => 'masculino',
+                'telefono' => '0416-4445566',
+                'telefono2' => null,
+                'email' => 'miguel.torres@empresa.com',
+                'email2' => null,
+                'estado_civil' => 'divorciado',
+                'direccion' => 'Calle 5 con Calle 8, Casa 22',
+                'departamento' => 'Logística',
+                'cargo' => 'Jefe de Almacén'
+            ],
+            [
+                'cedula' => '29654321',
+                'nombre' => 'Valentina',
+                'apellido' => 'Morales',
+                'edad' => 24,
+                'genero' => 'femenino',
+                'telefono' => '0424-1112222',
+                'telefono2' => '0241-9998888',
+                'email' => 'valentina.morales@correo.com',
+                'email2' => 'vmorales@gmail.com',
+                'estado_civil' => 'soltero',
+                'direccion' => 'Urb. La Alegría, Torre 2, Piso 5',
+                'departamento' => 'Sistemas',
+                'cargo' => 'Desarrolladora Frontend'
+            ],
+            [
+                'cedula' => '20147852',
+                'nombre' => 'Alberto',
+                'apellido' => 'Castro',
+                'edad' => 48,
+                'genero' => 'masculino',
+                'telefono' => '0412-3334455',
+                'telefono2' => null,
+                'email' => 'alberto.castro@empresa.com',
+                'email2' => null,
+                'estado_civil' => 'casado',
+                'direccion' => 'Av. Cedeño 234, Valencia',
+                'departamento' => 'Producción',
+                'cargo' => 'Supervisor de Producción'
+            ],
+            [
+                'cedula' => '28951753',
+                'nombre' => 'Daniela',
+                'apellido' => 'Vargas',
+                'edad' => 29,
+                'genero' => 'femenino',
+                'telefono' => '0414-7778899',
+                'telefono2' => null,
+                'email' => 'daniela.vargas@mail.com',
+                'email2' => null,
+                'estado_civil' => 'concubinato',
+                'direccion' => 'Sector El Trigal, Calle 12',
+                'departamento' => 'Recursos Humanos',
+                'cargo' => 'Asistente de RRHH'
+            ],
+            [
+                'cedula' => '17852963',
+                'nombre' => 'Fernando',
+                'apellido' => 'Méndez',
+                'edad' => 56,
+                'genero' => 'masculino',
+                'telefono' => '0426-5556677',
+                'telefono2' => '0241-3332222',
+                'email' => 'fernando.mendez@empresa.com',
+                'email2' => 'fmendez@yahoo.com',
+                'estado_civil' => 'viudo',
+                'direccion' => 'Calle Real 567, Naguanagua',
+                'departamento' => 'Contabilidad',
+                'cargo' => 'Auditor Interno'
+            ],
+            [
+                'cedula' => '25147896',
+                'nombre' => 'Carolina',
+                'apellido' => 'Herrera',
+                'edad' => 33,
+                'genero' => 'femenino',
+                'telefono' => '0412-9998877',
+                'telefono2' => null,
+                'email' => 'carolina.herrera@correo.com',
+                'email2' => null,
+                'estado_civil' => 'casado',
+                'direccion' => 'Urb. Prebo, Casa 78',
+                'departamento' => 'Ventas',
+                'cargo' => 'Gerente de Ventas'
+            ],
+            [
+                'cedula' => '23654987',
+                'nombre' => 'Andrés',
+                'apellido' => 'Ruiz',
+                'edad' => 27,
+                'genero' => 'masculino',
+                'telefono' => '0424-4443322',
+                'telefono2' => null,
+                'email' => 'andres.ruiz@mail.com',
+                'email2' => null,
+                'estado_civil' => 'soltero',
+                'direccion' => 'Residencias San José, Apto 8C',
+                'departamento' => 'Sistemas',
+                'cargo' => 'Analista de Sistemas'
+            ],
+            [
+                'cedula' => '26987456',
+                'nombre' => 'Isabella',
+                'apellido' => 'Díaz',
+                'edad' => 36,
+                'genero' => 'femenino',
+                'telefono' => '0416-1112233',
+                'telefono2' => '0241-7776655',
+                'email' => 'isabella.diaz@empresa.com',
+                'email2' => 'idiaz@outlook.com',
+                'estado_civil' => 'divorciado',
+                'direccion' => 'Av. Bolívar Norte 890',
+                'departamento' => 'Marketing',
+                'cargo' => 'Especialista en Redes Sociales'
+            ],
+            [
+                'cedula' => '24753159',
+                'nombre' => 'Gabriel',
+                'apellido' => 'Romero',
+                'edad' => 44,
+                'genero' => 'masculino',
+                'telefono' => '0414-6665544',
+                'telefono2' => null,
+                'email' => 'gabriel.romero@correo.com',
+                'email2' => null,
+                'estado_civil' => 'casado',
+                'direccion' => 'Calle Comercio 123, Valencia',
+                'departamento' => 'Compras',
+                'cargo' => 'Jefe de Compras'
+            ],
+            [
+                'cedula' => '27896321',
+                'nombre' => 'Camila',
+                'apellido' => 'Jiménez',
+                'edad' => 25,
+                'genero' => 'femenino',
+                'telefono' => '0426-8887766',
+                'telefono2' => null,
+                'email' => 'camila.jimenez@mail.com',
+                'email2' => null,
+                'estado_civil' => 'soltero',
+                'direccion' => 'Urb. La Viña, Casa 34',
+                'departamento' => 'Atención al Cliente',
+                'cargo' => 'Representante de Servicio'
+            ],
+            [
+                'cedula' => '22951357',
+                'nombre' => 'Ricardo',
+                'apellido' => 'Navarro',
+                'edad' => 39,
+                'genero' => 'masculino',
+                'telefono' => '0412-2221133',
+                'telefono2' => '0241-4445566',
+                'email' => 'ricardo.navarro@empresa.com',
+                'email2' => 'rnavarro@gmail.com',
+                'estado_civil' => 'concubinato',
+                'direccion' => 'Av. Michelena 456, Valencia',
+                'departamento' => 'Calidad',
+                'cargo' => 'Inspector de Calidad'
+            ],
+            [
+                'cedula' => '29357159',
+                'nombre' => 'Lucia',
+                'apellido' => 'Ortiz',
+                'edad' => 30,
+                'genero' => 'femenino',
+                'telefono' => '0424-3332211',
+                'telefono2' => null,
+                'email' => 'lucia.ortiz@correo.com',
+                'email2' => null,
+                'estado_civil' => 'soltero',
+                'direccion' => 'Sector Trigal Norte, Calle 45',
+                'departamento' => 'Finanzas',
+                'cargo' => 'Analista Financiero'
+            ],
+        ];
+
+        foreach ($contactos as $contacto) {
+            Contacto::create($contacto);
+        }
+    }
+}

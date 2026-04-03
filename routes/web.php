@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,11 @@ use App\Http\Controllers\AuthController;
 // ==========================================
 
 Route::middleware('guest')->group(function () {
-
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 
     Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
     Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
-
 });
 
 Route::get('/forgot-password', [AuthController::class, 'showForgotPasswordForm'])->name('password.request');
@@ -36,7 +35,6 @@ Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('
 // ==========================================
 
 Route::middleware('auth')->group(function () {
-
     Route::get('/', function () {
         return view('index');
     })->name('inicio');
@@ -51,4 +49,5 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+    Route::resource('contactos', ContactoController::class);
 });

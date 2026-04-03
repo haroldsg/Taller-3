@@ -54,8 +54,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://store.steampowered.com/app/739630/Phasmophobia/"
-                                    target="_blank">
+                                <a class="nav-link {{ request()->routeIs('contactos.*') ? 'active' : '' }}" href="{{ route('contactos.index') }}">
+                                    <i class="bi bi-person-lines-fill"></i> Contactos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://store.steampowered.com/app/739630/Phasmophobia/" target="_blank">
                                     <i class="bi bi-steam"></i> Steam
                                 </a>
                             </li>
@@ -94,35 +98,22 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-discord"></i> Discord
+                            <a href="https://discord.com/invite/phasmophobia" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-discord"></i> Discord Oficial
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-youtube"></i> YouTube
+                            <a href="https://www.youtube.com/@officialkineticgames" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-youtube"></i> YouTube Oficial
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-reddit"></i> Reddit
+                            <a href="https://www.reddit.com/r/PhasmophobiaGame/" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-reddit"></i> Reddit Community
                             </a>
                         </li>
                     </ul>
 
-                    <h3><i class="bi bi-wrench"></i> Herramientas</h3>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-calculator"></i> Calculadora de Evidencias
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-map"></i> Mapas
-                            </a>
-                        </li>
-                    </ul>
                 @show
             </aside>
         </div>
@@ -130,6 +121,18 @@
         <!-- FOOTER -->
         <footer>
             <div class="container text-center">
+                <div>
+                    <a href="http://validator.w3.org/check?uri=referer" target="_blank">
+                        <img src="{{ asset('images/W3C/w3c-html.png') }}"
+                                alt="Valid HTML5" height="31" width="88">
+                    </a>
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+                        <img src="{{ asset('images/W3C/w3c-css.png') }}"
+                                alt="Valid CSS3" height="31" width="88">
+                    </a>
+                </div>            
+
+
                 <p>&copy; {{ date('Y') }} Phasmophobia Guia - Proyecto Educativo</p>
                 <p>
                     Phasmophobia es propiedad de
