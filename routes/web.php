@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,50 +12,43 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ==========================================
-// RUTAS PÚBLICAS
+// RUTAS PÚBLICAS (sin autenticación)
 // ==========================================
 
-// Página de inicio
-Route::get('/', function () {
-    return view('index');
-})->name('inicio');
+Route::middleware('guest')->group(function () {
 
-// Página de curiosidades
-Route::get('/curiosidades', function () {
-    return view('curiosidades');
-})->name('curiosidades');
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 
-// Página de guía
-Route::get('/guia', function () {
-    return view('guia');
-})->name('guia');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+    Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
 
-// ==========================================
-// RUTAS DE AUTENTICACIÓN (Solo vistas por ahora)
-// ==========================================
+});
 
-// Login
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+Route::get('/forgot-password', [AuthController::class, 'showForgotPasswordForm'])->name('password.request');
 
-// Register
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
-
-// Forgot Password
-Route::get('/forgot-password', function () {
-    return view('auth.forgot-password');
-})->name('password.request');
-
+Route::post('/validate-email', [AuthController::class, 'validateEmail'])->name('validate.email');
+Route::post('/validate-security-answer', [AuthController::class, 'validateSecurityAnswer'])->name('validate.security-answer');
+Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.reset');
 
 // ==========================================
-// RUTAS POST (Preparadas para controladores)
-// Descomentar cuando se conecte la base de datos
+// RUTAS PROTEGIDAS (requieren autenticación)
 // ==========================================
 
-// Route::post('/login', [AuthController::class, 'login']);
-// Route::post('/register', [AuthController::class, 'register']);
-// Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.reset');
-// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::middleware('auth')->group(function () {
+
+    Route::get('/', function () {
+        return view('index');
+    })->name('inicio');
+
+    Route::get('/curiosidades', function () {
+        return view('curiosidades');
+    })->name('curiosidades');
+
+    Route::get('/guia', function () {
+        return view('guia');
+    })->name('guia');
+
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+});
