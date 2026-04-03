@@ -153,3 +153,7 @@ php artisan serve
 - **Base de Datos**: MySQL
 - **Validacion**: W3C HTML5 y CSS3
 
+## Integrantes
+
+Harold Franco 28.330.946
+Elio Guarate 28.182.524

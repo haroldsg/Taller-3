@@ -41,7 +41,6 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- Cuando conectes la BD, aquí irá el @foreach --}}
                 @forelse ($contactos ?? [] as $contacto)
                     <tr>
                         <td>{{ $contacto->cedula }}</td>
@@ -65,7 +64,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="7" class="text-center text-muted py-4">
+                        <td colspan="7" class="text-center py-4">
                             No hay contactos registrados.
                             <a href="{{ route('contactos.create') }}">Crear el primero</a>
                         </td>

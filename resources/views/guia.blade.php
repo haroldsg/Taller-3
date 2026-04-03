@@ -18,7 +18,7 @@
             <h3 class="card-title text-success mb-1">
                 <i class="bi bi-backpack"></i> Equipamiento esencial
             </h3>
-            <p class="text-muted mb-0">Para sobrevivir en el mundo de Phasmophobia, es crucial contar con el equipamiento adecuado</p>
+            <p class="mb-0">Para sobrevivir en el mundo de Phasmophobia, es crucial contar con el equipamiento adecuado</p>
         </div>
         <div class="card-body">
             <h4><i class="bi bi-broadcast"></i> Equipo básico de detección</h4>
@@ -44,7 +44,7 @@
             <h3 class="card-title text-success mb-1">
                 <i class="bi bi-shield-check"></i> Equipo de protección
             </h3>
-            <p class="text-muted mb-0">Protégete de los fantasmas con estos objetos esenciales</p>
+            <p class="mb-0">Protégete de los fantasmas con estos objetos esenciales</p>
         </div>
         <div class="card-body">
             <div class="row">
@@ -53,7 +53,7 @@
                         <i class="bi bi-plus-circle text-success fs-4 me-3"></i>
                         <div>
                             <h5 class="text-light">Crucifijo</h5>
-                            <p class="text-muted mb-0">Previene que el fantasma inicie una cacería si está dentro del rango.</p>
+                            <p class="mb-0">Previene que el fantasma inicie una cacería si está dentro del rango.</p>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                         <i class="bi bi-lamp text-warning fs-4 me-3"></i>
                         <div>
                             <h5 class="text-light">Velas</h5>
-                            <p class="text-muted mb-0">Mantén tu cordura iluminando el área con velas encendidas.</p>
+                            <p class="mb-0">Mantén tu cordura iluminando el área con velas encendidas.</p>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                         <i class="bi bi-droplet text-info fs-4 me-3"></i>
                         <div>
                             <h5 class="text-light">Incienso</h5>
-                            <p class="text-muted mb-0">Ahuyenta temporalmente al fantasma durante una cacería.</p>
+                            <p class="mb-0">Ahuyenta temporalmente al fantasma durante una cacería.</p>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                         <i class="bi bi-box text-secondary fs-4 me-3"></i>
                         <div>
                             <h5 class="text-light">Escondites</h5>
-                            <p class="text-muted mb-0">Armarios y lockers son tu mejor opción durante una cacería.</p>
+                            <p class="mb-0">Armarios y lockers son tu mejor opción durante una cacería.</p>
                         </div>
                     </div>
                 </div>
